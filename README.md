@@ -57,5 +57,5 @@ Ou acessando:
 Documentação completa: `docs/hardware.md`
 
 ---
-## Autora
+## Autoria
 **Lidiane Brito Ferreira, Isabela Pereira Felipe, Igor Cristiano Pinto Lopes**
