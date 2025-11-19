@@ -41,6 +41,7 @@ A simulação completa pode ser importada usando os arquivos:
 
 📄 diagram.json (Fiação e componentes)
 ---
+<<<<<<< HEAD
 ### **Hardware Virtual:**
 - ESP32 DevKit V1
 - Sensor de temperatura DS18B20 (GPIO 4)
@@ -54,3 +55,7 @@ Lidiane Brito Ferreira
 Isabela Pereira Felipe
 
 Igor Cristiano Pinto Lopes
+=======
+## Autoria
+**Lidiane Brito Ferreira, Isabela Pereira Felipe, Igor Cristiano Pinto Lopes**
+>>>>>>> b66e25b543e831894933c2b063db6f5bc853cbeb
