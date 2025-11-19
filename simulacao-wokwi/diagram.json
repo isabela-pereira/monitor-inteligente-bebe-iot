@@ -1,57 +1,21 @@
 {
   "version": 1,
-  "author": "Isabela",
+  "author": "Lidiane Sousa",
   "editor": "wokwi",
   "parts": [
-    {
-      "type": "wokwi-esp32-devkit-v1",
-      "id": "esp",
-      "top": 0,
-      "left": 0,
-      "attrs": {}
-    },
-    {
-      "type": "wokwi-ds18b20",
-      "id": "temp",
-      "top": -120,
-      "left": 260,
-      "attrs": {}
-    },
-    {
-      "type": "wokwi-potentiometer",
-      "id": "pot",
-      "top": 80,
-      "left": 260,
-      "attrs": { "value": "0.5" }
-    },
-    {
-      "type": "wokwi-resistor",
-      "id": "r1",
-      "top": -160,
-      "left": 310,
-      "attrs": { "value": "4.7k" }
-    },
-    {
-      "type": "wokwi-buzzer",
-      "id": "buzz",
-      "top": -60,
-      "left": -140,
-      "attrs": { "volume": "1.0" }
-    }
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": -86.4, "left": -91.16, "attrs": {} },
+    { "type": "board-ds18b20", "id": "temp1", "top": -125.93, "left": -245.52, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -202.9, "left": -86.6, "attrs": {} }
   ],
   "connections": [
-    { "from": "temp:D", "to": "esp:4" },
-    { "from": "temp:VCC", "to": "esp:3.3V" },
-    { "from": "temp:GND", "to": "esp:GND.1" },
-
-    { "from": "r1:1", "to": "temp:D" },
-    { "from": "r1:2", "to": "temp:VCC" },
-
-    { "from": "pot:SIG", "to": "esp:34" },
-    { "from": "pot:VCC", "to": "esp:3.3V" },
-    { "from": "pot:GND", "to": "esp:GND.2" },
-
-    { "from": "buzz:1", "to": "esp:5" },
-    { "from": "buzz:2", "to": "esp:GND.3" }
-  ]
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "temp1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "temp1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "temp1:DQ", "esp:4", "green", [ "v240", "h268.8", "v-105.6" ] ],
+    [ "pot1:GND", "esp:GND.3", "black", [ "v38.4", "h96", "v96" ] ],
+    [ "pot1:VCC", "esp:3V3", "red", [ "v19.2", "h-58.4", "v57.6" ] ],
+    [ "esp:34", "pot1:SIG", "green", [ "h-28.65", "v-86.4", "h67.6" ] ]
+  ],
+  "dependencies": {}
 }

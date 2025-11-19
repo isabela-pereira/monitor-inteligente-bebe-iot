@@ -5,13 +5,14 @@ Servidor: broker.hivemq.com
 Porta: 1883  
 
 Tópicos:
-- bebemonitor/temperatura
-- bebemonitor/som
+- mackenzie/iot/bebe/status
+- mackenzie/iot/bebe/alerta
 
 Formato:
 - Temperatura (float)
 - Nível de som (0–4095)
 
-Bibliotecas:
-- WiFi.h
+Bibliotecas utilizadas:
 - PubSubClient
+- OneWire
+- DallasTemperature
