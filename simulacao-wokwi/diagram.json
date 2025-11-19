@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "author": "Isabela",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ds18b20",
+      "id": "temp",
+      "top": -120,
+      "left": 260,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot",
+      "top": 80,
+      "left": 260,
+      "attrs": { "value": "0.5" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -160,
+      "left": 310,
+      "attrs": { "value": "4.7k" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz",
+      "top": -60,
+      "left": -140,
+      "attrs": { "volume": "1.0" }
+    }
+  ],
+  "connections": [
+    { "from": "temp:D", "to": "esp:4" },
+    { "from": "temp:VCC", "to": "esp:3.3V" },
+    { "from": "temp:GND", "to": "esp:GND.1" },
+
+    { "from": "r1:1", "to": "temp:D" },
+    { "from": "r1:2", "to": "temp:VCC" },
+
+    { "from": "pot:SIG", "to": "esp:34" },
+    { "from": "pot:VCC", "to": "esp:3.3V" },
+    { "from": "pot:GND", "to": "esp:GND.2" },
+
+    { "from": "buzz:1", "to": "esp:5" },
+    { "from": "buzz:2", "to": "esp:GND.3" }
+  ]
+}
